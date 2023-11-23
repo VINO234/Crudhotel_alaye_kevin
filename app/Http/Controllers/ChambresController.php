@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use app\Models\Chambre;
 use Illuminate\Http\Request;
 
 class ChambresController extends Controller
@@ -13,7 +13,11 @@ class ChambresController extends Controller
      */
     public function index()
     {
-        //
+        $chambres = Chambre::all();
+
+        return view('listechambre', [
+        'chambres' => $chambres
+       ]);
     }
 
     /**
@@ -23,7 +27,7 @@ class ChambresController extends Controller
      */
     public function create()
     {
-        //
+        return view('Ajouter');
     }
 
     /**
@@ -34,7 +38,14 @@ class ChambresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $chambre = new Chambre();
+        $chambre->nom = $request->input('nom');
+        $chambre->prix = $request->input('prix');
+        $chambre->nombre_lits = $request->input('nombre_lits');
+
+        $chambre->save();
+
+        return redirect()->route('');
     }
 
     /**
@@ -45,7 +56,9 @@ class ChambresController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Modifier', [
+        'chambre' => $chambre,
+    ]);
     }
 
     /**
