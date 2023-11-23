@@ -18,6 +18,15 @@ Route::get('/', function () {
     return view('Accueil');
 });
 
+
+Route::get('/liste', [ChambresController::class, 'index']);
+Route::get('/ajouter', [ChambresController::class, 'create']);
+Route::post('/ajouter/traitement', [ChambresController::class, 'store'])->name('ajouter');
+
+
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

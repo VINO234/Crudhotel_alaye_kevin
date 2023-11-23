@@ -45,7 +45,7 @@ class ChambresController extends Controller
 
         $chambre->save();
 
-        return redirect()->route('');
+        return redirect()->route('/liste');
     }
 
     /**
@@ -56,9 +56,7 @@ class ChambresController extends Controller
      */
     public function show($id)
     {
-        return view('Modifier', [
-        'chambre' => $chambre,
-    ]);
+        
     }
 
     /**

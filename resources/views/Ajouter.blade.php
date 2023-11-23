@@ -7,7 +7,7 @@
 <body>
     <h1>Ajouter une chambre</h1>
 
-    <form action="/chambres" method="post">
+    <form action="{{ route('ajouter') }}" method="post">
         @csrf
 
         <input type="text" name="nom" placeholder="Nom de la chambre">
