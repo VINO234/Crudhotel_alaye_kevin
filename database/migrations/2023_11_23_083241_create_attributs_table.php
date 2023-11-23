@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('attributs', function (Blueprint $table) {
             $table->id();
-            $table->integer('service_reveil');
-            $table->integer('television');
-            $table->integer('service_nettoyage');
-            $table->integer('petit_dej');
+            $table->boolean('service_reveil');
+            $table->boolean('television');
+            $table->boolean('service_nettoyage');
+            $table->boolean('petit_dej');
             $table->timestamps();
         });
     }

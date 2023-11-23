@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Attribut extends Model
 {
     use HasFactory;
+    protected $fillable = [
+      'service_reveil',
+      'television',
+      'service_nettoyage',
+      'petit-dej',
+    ];
 }
