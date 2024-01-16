@@ -15,9 +15,7 @@ class ChambresController extends Controller
     {
         $chambres = Chambre::all();
 
-        return view('listechambre', [
-        'chambres' => $chambres
-       ]);
+        return view('listechambre', compact('chambres'));
     }
 
     /**
@@ -56,7 +54,7 @@ class ChambresController extends Controller
      */
     public function show($id)
     {
-        
+        return view('Modifier', compact(''));
     }
 
     /**

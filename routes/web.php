@@ -20,11 +20,12 @@ Route::get('/', function () {
 
 
 Route::get('/liste', [ChambresController::class, 'index']);
-Route::get('/ajouter', [ChambresController::class, 'create']);
-Route::post('/ajouter/traitement', [ChambresController::class, 'store'])->name('ajouter');
-
-
-
+Route::get('/ajouter/create', [ChambresController::class, 'create'])->name('ajouter');
+Route::post('/ajouter', [ChambresController::class, 'store'])->name('ajouter_traite');
+Route::get('/liste/{id}', [ChambresController::class, 'show']);
+Route::get('/liste/{id}/edit', [ChambresController::class, 'edit']);
+Route::patch('/liste/{id}', [ChambresController::class, 'update']);
+Route::delete('/liste/{id}', [ChambresController::class, 'destroy']);
 
 
 Route::get('/dashboard', function () {
